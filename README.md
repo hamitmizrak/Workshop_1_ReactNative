@@ -1,4 +1,6 @@
 # React Native
+npx react-native start --port 9999
+npx react-native run-android
 
 # ###########################################################################
 ## 1-) JDK KUR
