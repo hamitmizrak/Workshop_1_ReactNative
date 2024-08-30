@@ -290,14 +290,16 @@ Eğer Başlamazsa şunları yapabilirsin
 2.adım:  npm install
 3.adım:  npm update
 4.adım:  npx react-native doctor
-5.adım:  npm cache clean --force
-6.adım:  npm start --reset-cache
-7.adım:  npx react-native start --reset-cache
-8.adım:  npx react-native start 
-9.adım:  npx react-native start --port 9999
-9.adım:  npx react-native run-android
-10.adım:  info Dev server ready ==>  npx react-native run-android
+5.adım:  JDK path veya doğru yüklenmiş mi ?
+6.adım:  npm cache clean --force
+7.adım:  npm start --reset-cache
+8.adım:  npx react-native start --reset-cache
+9.adım:  npx react-native start 
+10.adım:  npx react-native start --port 9999
+11.adım:  npx react-native run-android
+12.adım:  info Dev server ready ==>  npx react-native run-android
 
+13.adım: port değiştirmek
  "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
