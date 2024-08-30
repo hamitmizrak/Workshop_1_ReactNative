@@ -201,6 +201,7 @@ $ npm install http-server -g (terminalde ==> http-server)
 Pixel 4 API 35 üzerinden devam et
 NOT: Eğer başlamazsa silip Pixel 4 API 30 R Yükle
 
+NOT: Android Virtual Device Üzerinde iken R(2 kez) Reload yapıyor.
 ```
 ---
 
@@ -328,89 +329,190 @@ npm install
 
 
 # ###########################################################################
-## Step 2: Start your Application
+## 22-) Snippet 
+```bash
+Snippet: React Native Snippet author: jundat95
+imp
+
+rnc => React Native Class Component
+rnce => React Native Class Export Component
+rnpc => React Native Class Export PureComponent Component
+
+rnf => React Native Function Component
+rnfe => React Native Function Export Component
+rnfes => React Native Function Export Component styles
+rnfs => React Native Function Component styles
+```
+---
+
+
+# ###########################################################################
+## 22-) package.json (NOT: Burada Eslint kapattım)
+```bash
+{
+  "name": "WorkshopReactNative",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start --port 9999",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@react-native-community/blur": "^4.4.0",
+    "@react-navigation/native": "^6.1.18",
+    "@react-navigation/native-stack": "^6.11.0",
+    "react": "18.3.1",
+    "react-native": "0.75.2",
+    "react-native-safe-area-context": "^4.10.8",
+    "react-native-screens": "^3.33.0",
+    "react-native-vector-icons": "^10.1.0",
+    "react-redux": "^9.1.2",
+    "redux": "^5.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0",
+    "@babel/preset-env": "^7.20.0",
+    "@babel/runtime": "^7.20.0",
+    "@react-native/babel-preset": "0.75.2",
+    "@react-native/metro-config": "0.75.2",
+    "@react-native/typescript-config": "0.75.2",
+    "@types/react": "^18.2.6",
+    "@types/react-test-renderer": "^18.0.0",
+    "babel-jest": "^29.6.3",
+    "jest": "^29.6.3",
+    "react-test-renderer": "18.3.1",
+    "typescript": "5.0.4"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
+```
+---
+
+
+# ###########################################################################
+## 22-) Proje İçin 
+```bash
+$ ICON EKLEMEK
+npm install react-native-vector-icons --save
+
+android/app/build.gradle 
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+
+
+/*
+Font Vector (IOS)
+Xcode açalım ve Info.plist dosyasına şu satırları ekleyin
+
+<key>UIAppFonts</key>
+<array>
+  <string>AntDesign.ttf</string>
+  <string>Entypo.ttf</string>
+  <string>EvilIcons.ttf</string>
+  <string>Feather.ttf</string>
+  <string>FontAwesome.ttf</string>
+  <string>FontAwesome5_Brands.ttf</string>
+  <string>FontAwesome5_Regular.ttf</string>
+  <string>FontAwesome5_Solid.ttf</string>
+  <string>Foundation.ttf</string>
+  <string>Ionicons.ttf</string>
+  <string>MaterialIcons.ttf</string>
+  <string>MaterialCommunityIcons.ttf</string>
+  <string>SimpleLineIcons.ttf</string>
+  <string>Octicons.ttf</string>
+  <string>Zocial.ttf</string>
+</array>
+*/ 
+
+//"eslint": "^8.19.0",
+```
+---
+
+# ###########################################################################
+## 22-) Proje İçin 
+```bash
+-- BLUR => Hem Android hemde IOS tarafından  çalışır
+
+$ BLUR NPM
+npm install @react-native-community/blur
+
+-- KULLANILIŞI
+<BlurView 
+  style={styles.absolue}
+  blurType="light"
+  blurAmount={10}
+ >
+ <Text style={styles.componentText}>Data</Text> 
+ </BlurView>
+
+ absolute:{
+  position: 'absolute',
+  top:0,
+  left: 0,
+  bottom:0,
+  right:0,
+  }
+  componentText:{
+    fonstSize:8,
+    color:'white',
+    padding:5,
+    borderRadiuse:10
+  }
+ }
+```
+---
+
+# ###########################################################################
+## 22-) Proje İçin 
+```bash
+$ REDUX 
+npm install redux react-redux
+
+Context API, Redux ekleyerek daha esnek ve geniş kapsamlı durum yönetimi sağlayabiliriz.
+Bu yapı uygulamamızı modüler , yeniden kullanabilirliği sağlayacaktır.
+
+Context API: Ek bilgileri sağlayacağız.
+Redux : Redux kütüphanesini kullanarak yapılandıracağız.
+```
+---
+
+
+
+# ###########################################################################
+## 22-) Proje İçin 
 ```bash
 
 ```
 ---
 
-********************************************************************************************************************************************************************
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
-
-# Getting Started
-
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
-
-## Step 1: Start the Metro Server
-
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
-
-To start Metro, run the following command from the _root_ of your React Native project:
-
+# ###########################################################################
+## 22-) Proje İçin 
 ```bash
-# using npm
-npm start
 
-# OR using Yarn
-yarn start
 ```
+---
 
-## Step 2: Start your Application
-
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
-
-### For Android
-
+# ###########################################################################
+## 22-) Proje İçin 
 ```bash
-# using npm
-npm run android
 
-# OR using Yarn
-yarn android
 ```
+---
 
-### For iOS
-
+# ###########################################################################
+## 22-) Proje İçin 
 ```bash
-# using npm
-npm run ios
 
-# OR using Yarn
-yarn ios
 ```
+---
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+# ###########################################################################
+## 22-) Proje İçin 
+```bash
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+```
+---
 
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
