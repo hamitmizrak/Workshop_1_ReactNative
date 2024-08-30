@@ -347,7 +347,7 @@ rnfs => React Native Function Component styles
 
 
 # ###########################################################################
-## 22-) package.json (NOT: Burada Eslint kapattım)
+## 23-) package.json (NOT: Burada Eslint kapattım)
 ```bash
 {
   "name": "WorkshopReactNative",
@@ -394,7 +394,7 @@ rnfs => React Native Function Component styles
 
 
 # ###########################################################################
-## 22-) Proje İçin 
+## 24-) Proje İçin 
 ```bash
 $ ICON EKLEMEK
 npm install react-native-vector-icons --save
@@ -432,7 +432,7 @@ Xcode açalım ve Info.plist dosyasına şu satırları ekleyin
 ---
 
 # ###########################################################################
-## 22-) Proje İçin 
+## 25-) Proje İçin 
 ```bash
 -- BLUR => Hem Android hemde IOS tarafından  çalışır
 
@@ -466,7 +466,7 @@ npm install @react-native-community/blur
 ---
 
 # ###########################################################################
-## 22-) Proje İçin 
+## 26-) Proje İçin 
 ```bash
 $ REDUX 
 npm install redux react-redux
@@ -482,37 +482,31 @@ Redux : Redux kütüphanesini kullanarak yapılandıracağız.
 
 
 # ###########################################################################
-## 22-) Proje İçin 
+## 27-) Proje İçin 
 ```bash
 
 ```
 ---
 
 # ###########################################################################
-## 22-) Proje İçin 
+## 28-) Proje İçin 
 ```bash
 
 ```
 ---
 
 # ###########################################################################
-## 22-) Proje İçin 
+## 29-) Proje İçin 
 ```bash
 
 ```
 ---
 
 # ###########################################################################
-## 22-) Proje İçin 
+## 30-) Proje İçin 
 ```bash
 
 ```
 ---
 
-# ###########################################################################
-## 22-) Proje İçin 
-```bash
-
-```
----
 
