@@ -28,7 +28,6 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 // COUNTER CLASS
 class CounterClass extends Component {
-
   // constructor(Kurucu Method: Default ayarlar)
   constructor(props) {
     super(props);
@@ -44,10 +43,9 @@ class CounterClass extends Component {
     this.resetCounter = this.resetCounter.bind(this);
   } //end constructor
 
+  /////////////////////////////////////////////////////////////////////////
   // CDM
-  componentDidMount() {
-    
-  }
+  componentDidMount() {}
 
   /////////////////////////////////////////////////////////////////////////
   // FUNCTION
@@ -90,16 +88,14 @@ class CounterClass extends Component {
     return (
       // React her zaman sarmalayıcı bir yapı ister buradaki wrapper(sarmalayıcı)) View
       <View style={styles.container}>
-
         {/*  Sayaç Göster */}
         <Text style={styles.counterText}>Sayaç: {this.state.counter}</Text>
 
         {/* Button Group */}
         <View style={styles.buttonGroup}>
-
           {/* ARTIRMA 1.YOL */}
           <TouchableOpacity
-            style={[styles.button,{backgroundColor:'orange'}]}
+            style={[styles.button, {backgroundColor: 'orange'}]}
             onPress={this.inCreaseCounter}>
             <Icon name="plus" size={15} color="#fff" />
             <Text style={styles.buttonText}>Artır</Text>
@@ -109,7 +105,7 @@ class CounterClass extends Component {
 
           {/* AZALTACAK 1.YOL */}
           <TouchableOpacity
-            style={[styles.button,{backgroundColor:'red'}]}
+            style={[styles.button, {backgroundColor: 'red'}]}
             onPress={this.deCreaseCounter}>
             <Icon name="minus" size={15} color="#fff" />
             <Text style={styles.buttonText}>Azalt</Text>
@@ -118,9 +114,9 @@ class CounterClass extends Component {
           {/* <Button title="Sayaç Azalt" onPress={this.deCreaseCounter} /> */}
 
           {/* TEMİZLE 1.YOL */}
-          <TouchableOpacity 
-          style={[styles.button,{backgroundColor:'orange'}]}
-          onPress={this.resetCounter}>
+          <TouchableOpacity
+            style={[styles.button, {backgroundColor: 'blue'}]}
+            onPress={this.resetCounter}>
             <Icon name="reflesh" size={15} color="#fff" />
             <Text style={styles.buttonText}>Temizle</Text>
           </TouchableOpacity>
