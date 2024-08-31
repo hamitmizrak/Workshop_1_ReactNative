@@ -1,4 +1,4 @@
-/* 
+/*
 CLASS COMPONENT ÖZELLİKLERİ
 1-) props erişim için this anahtarı kullanırılır.
 2-) Render vardır
@@ -45,7 +45,12 @@ class CounterClass extends Component {
 
   /////////////////////////////////////////////////////////////////////////
   // CDM
-  componentDidMount() {}
+  componentDidMount() {
+
+    if (this.state.counter >= 10) {
+      Alert.alert('Sayacınız 10 e ulaştı!');
+    }
+  }
 
   /////////////////////////////////////////////////////////////////////////
   // FUNCTION

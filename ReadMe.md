@@ -60,6 +60,8 @@ $ adb start-server
 $ adb error
 ```
 ---
+
+
 # ###########################################################################
 ## 5-) MAVEN
 ```bash
@@ -72,7 +74,7 @@ $ mvn -v
 ---
 
 # ###########################################################################
-## 6-) CHOCO 
+## 6-) CHOCO (WINDOWS)
 ```bash
 Windows üzerinde `Powershell` terminalinden programlamalar yüklemek  istiyorsak paket yönetimi olan choco yüklemek
 
@@ -473,7 +475,7 @@ npm install @react-native-community/blur
 ---
 
 # ###########################################################################
-## 26-) Proje İçin  (Redux Eklemek) 
+## 26-) Proje İçin  (Redux-Context Eklemek) 
 ```bash
 $ REDUX 
 npm install redux react-redux

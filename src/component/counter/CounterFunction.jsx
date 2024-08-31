@@ -1,13 +1,8 @@
-/* 
+/*
 FUNCTION COMPONENT ÖZELLİKLERİ
 1-) props erişim
-4-) Yorumlama {/* * /}
-4-) componentDidMount() : Componenti render edildikten sonra çalışır
-5-) componentWillUnmount() : Componenti render edildikten önce çalışır
-6-) componentDidUpdate(prevProps, prevState) : State değiştiğinde çalışır
-7-) shouldComponentUpdate(nextProps, nextState) : Render edilmek isteniyor mu? (true ise render edilir, false ise render edilmeyecek)
-8-) state, setState
-9-) bind
+2-) Yorumlama {/* * /}
+3-) Hooks
 */
 
 // IMPORT
