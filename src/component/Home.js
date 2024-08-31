@@ -24,6 +24,7 @@ import CounterClass from './counter/CounterClass';
 
 // COUNTER FUNCTION
 import CounterFunction from './counter/CounterFunction';
+
 // STACK (CREATE)
 const Stack = createNativeStackNavigator();
 
@@ -46,9 +47,10 @@ function Home() {
     <Provider store={StoreRedux}>
       {/* Context */}
       <CounterContextProvider>
+        {/*Navigation*/}
         <NavigationContainer>
           <Stack.Navigator>
-            
+
             {/* Home */}
             <Stack.Screen
               name="Home"

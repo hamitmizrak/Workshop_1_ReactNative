@@ -15,6 +15,7 @@ import {
   TouchableOpacity,
   Alert,
   ImageBackground,
+  Modal,
 } from 'react-native';
 
 // Vector Icons
@@ -22,6 +23,8 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 // REACT
 import React, {useCallback, useEffect, useMemo, useRef, useState} from 'react';
+
+// REDUX
 import {useDispatch, useSelector} from 'react-redux';
 import {useCounterContext} from '../counter_props_context_redux/CounterContextApi';
 
@@ -44,11 +47,6 @@ const AlertCard = ({visible, onClose, message}) => {
       </View>
     </Modal>
   );
-};
-
-// Modal Kapatmak
-const closeAlert = () => {
-  setIsAlertVisible(false);
 };
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -81,6 +79,12 @@ const CounterPropsContextReduxFunction = ({route}) => {
   const targetCount = 10;
 
   /////////////////////////////////////////////////////////////////////////
+  // Modal Kapatmak
+  const closeAlert = () => {
+    setIsAlertVisible(false);
+  };
+
+  /////////////////////////////////////////////////////////////////////////
   // useEffect
   useEffect(() => {
     // eğer sayı 10 olursa Modal Dialog açılsıhn
@@ -95,14 +99,6 @@ const CounterPropsContextReduxFunction = ({route}) => {
       console.log('Counter useEffect Temizleme');
     };
   }, [count]); //end useEffect
-
-  /////////////////////////////////////////////////////////////////////////
-  // HOOKS USE-EFFECT
-  useEffect(() => {
-    if (count >= 10) {
-      Alert.alert('Sayacınız 10 e ulaştı!');
-    }
-  }, [count]);
 
   /////////////////////////////////////////////////////////////////////////
   // HOOKS USE-MEMO
@@ -156,7 +152,9 @@ const CounterPropsContextReduxFunction = ({route}) => {
       <View style={styles.container}>
         {/*  Sayaç Göster */}
         <Text style={styles.counterText}>Sayaç: {count}</Text>
-        <Text style={styles.memoText}>Sayaç iki katı use memo: {doubleCount}</Text>
+        <Text style={styles.memoText}>
+          Sayaç iki katı use memo: {doubleCount}
+        </Text>
         <Text style={styles.infoText}>Context: {info}</Text>
 
         {/* Button Group */}
@@ -190,6 +188,13 @@ const CounterPropsContextReduxFunction = ({route}) => {
           </TouchableOpacity>
           {/* TEMİZLE 2.YOL */}
           {/* <Button title="Sayaç Temizle" onPress={resetCounter} /> */}
+
+          {/* Alert Modal */}
+          <AlertCard
+            visible={isAlertVisible}
+            onClose={closeAlert}
+            message={modalMessage}
+          />
         </View>
       </View>
     </ImageBackground>
@@ -222,8 +227,8 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
   },
 
-  memoText:{
-    color:"#fff",
+  memoText: {
+    color: '#fff',
   },
 
   infoText: {
@@ -233,7 +238,6 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     textTransform: 'uppercase',
   },
-
 
   buttonGroup: {
     flexDirection: 'row',
@@ -254,5 +258,41 @@ const styles = StyleSheet.create({
     color: '#f2f2f2',
     fontSize: 16,
     fontWeight: 'bold',
+  },
+  // Alert Modal
+  alertContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0,0,0,0.5)',
+  },
+
+  alertBox: {
+    width: 300,
+    padding: 20,
+    borderRadius: 10,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+  },
+
+  alertMessage: {
+    fontSize: 18,
+    marginBottom: 20,
+    textAlign: 'center',
+  },
+
+  alertCloseButton: {
+    top: 10,
+    right: 10,
+    backgroundColor: '#6200ee',
+    borderRadius: 5,
+    padding: 6,
+    position: 'absolute',
+    elevation: 5,
+  },
+
+  alertCloseButtonText: {
+    color: '#ffffff',
+    fontSize: 16,
   },
 }); // end StyleSheet
