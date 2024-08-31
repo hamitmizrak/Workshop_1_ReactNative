@@ -24,19 +24,31 @@ import CounterClass from './counter/CounterClass';
 
 // COUNTER FUNCTION
 import CounterFunction from './counter/CounterFunction';
-
-
 // STACK (CREATE)
 const Stack = createNativeStackNavigator();
+
+// REDUX
+import {Provider} from 'react-redux';
+import StoreRedux from './counter_props_context_redux/CounterReduxStore';
+
+// CONTEXT
+import {CounterContextProvider} from './counter_props_context_redux/CounterContextApi';
+
+// PROPS CONTEXT REDUX FUNCTION
+import CounterPropsContextReduxFunction from './counter/CounterPropsContextReduxFunction';
 
 // NAVIGATION (HOME)
 // 1.YOL => function Home(){return()}
 // 2.YOL => const Home=()=>{return()}
 function Home() {
   return (
+    // Redux import
+    <Provider store={StoreRedux}>
+      {/* Context */}
+      <CounterContextProvider>
         <NavigationContainer>
           <Stack.Navigator>
-
+            
             {/* Home */}
             <Stack.Screen
               name="Home"
@@ -57,8 +69,19 @@ function Home() {
               component={CounterFunction}
               options={{title: 'Counter Function'}}
             />
+
+            {/* Counter Props, Context, Redux Function Component */}
+            <Stack.Screen
+              name="CounterPropsContextReduxFunction"
+              component={CounterPropsContextReduxFunction}
+              options={{
+                title: 'Counter Props Context Redux Function',
+              }}></Stack.Screen>
           </Stack.Navigator>
         </NavigationContainer>
+      </CounterContextProvider>
+      {/* end Context */}
+    </Provider> // end redux
   ); //end return
 } // end Home
 
@@ -90,7 +113,6 @@ const HomeScreen = ({navigation, route}) => {
       {/* CARD */}
       {/* Component-1 */}
       <ScrollView horizontal={true} style={styles.scrollViewCardStyle}>
-
         {/* Counter Class Component-1 */}
         <View style={styles.cardViewStyle}>
           <TouchableOpacity
@@ -106,18 +128,21 @@ const HomeScreen = ({navigation, route}) => {
                 width: '100%',
                 height: '100%',
                 borderRadius: 10,
-                backgroundColor: '#000', 
+                backgroundColor: '#000',
               }}
             />
             {/* <Text></Text> */}
           </TouchableOpacity>
 
           {/* Blur Effect */}
-          <BlurView style={styles.blurViewStyle} blurType="light" blurAmount={10}>
+          <BlurView
+            style={styles.blurViewStyle}
+            blurType="light"
+            blurAmount={10}>
             <Text style={styles.blurViewTextStyle}>Counter Class</Text>
           </BlurView>
-        </View>{/* end Counter Class Component-1 */}
-        
+        </View>
+        {/* end Counter Class Component-1 */}
 
         {/* Counter Function Component-2 */}
         <View style={styles.cardViewStyle}>
@@ -130,11 +155,42 @@ const HomeScreen = ({navigation, route}) => {
           <Text style={styles.blurViewTextStyle}>Counter Function</Text>
 
           {/* Blur Effect */}
-          <BlurView style={styles.blurViewStyle} blurType="light" blurAmount={10}>
+          <BlurView
+            style={styles.blurViewStyle}
+            blurType="light"
+            blurAmount={10}>
             <Text style={styles.blurViewTextStyle}>Counter Function</Text>
           </BlurView>
-        </View> 
-      </ScrollView> 
+        </View>
+
+        {/* Counter Props, Context, Redux Function Component-3 */}
+        <View style={styles.cardViewStyle}>
+          <TouchableOpacity
+            onPress={() =>
+              navigation.navigate('CounterPropsContextReduxFunction', {
+                name: 'CounterPropsContextReduxFunction',
+
+                // Props parametresi gönder
+                initialCount: '0',
+                modalMessage: 'Sayaç 10 geçti',
+              })
+            }>
+            <Image
+              source={require('../assets/mobil.webp')}
+              style={styles.viewImageStyle}
+            />
+          </TouchableOpacity>
+          <Text style={styles.blurViewTextStyle}>Props,Context,Redux</Text>
+
+          {/* Blur Effect */}
+          <BlurView
+            style={styles.blurViewStyle}
+            blurType="light"
+            blurAmount={10}>
+            <Text style={styles.blurViewTextStyle}>Props,Context,Redux</Text>
+          </BlurView>
+        </View>
+      </ScrollView>
     </View>
   ); //end return
 }; // end Home Screen
@@ -162,7 +218,7 @@ const styles = StyleSheet.create({
     marginRight: 10,
     borderRadius: 10,
     borderColor: 'white',
-    color:"white",
+    color: 'white',
     height: 35,
     marginBottom: 15,
     opacity: 0.8,
