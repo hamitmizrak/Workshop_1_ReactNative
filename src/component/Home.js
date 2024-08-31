@@ -145,7 +145,7 @@ const HomeScreen = ({navigation, route}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f2f2f2',
+    backgroundColor: '#019',
     padding: 15,
   },
 
@@ -161,7 +161,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     marginRight: 10,
     borderRadius: 10,
-    borderColor: 'blue',
+    borderColor: 'white',
+    color:"white",
     height: 35,
     marginBottom: 15,
     opacity: 0.8,
@@ -169,7 +170,7 @@ const styles = StyleSheet.create({
   },
 
   searchTextStyle: {
-    color: 'blue',
+    color: 'white',
   },
 
   scrollViewCardStyle: {

@@ -232,7 +232,7 @@ $ npx react-native run-android
 
 
 # ###########################################################################
-## 16-) AKTİF PORT KAPATMAK
+## 16-) WINDOWS İŞLETİM SİSTEMİ AKTİF PORT KAPATMAK
 ```bash
 netstat -ano | findstrt:6666
 taskill /PID ID /F
@@ -265,7 +265,9 @@ npx create-expo-app@latest
 ```bash
 * What went wrong:
 java.io.UncheckedIOException: Could not move temporary workspace
-Project => android => gradle => wrapper => gradle-wrapper.properties =>distributionUrl=https\://services.gradle.org/distributions/gradle-8.5-all.zip
+Project => android => gradle => wrapper => gradle-wrapper.properties =>
+distributionUrl=https\://services.gradle.org/distributions/gradle-8.8-all.zip (NORMAL)
+distributionUrl=https\://services.gradle.org/distributions/gradle-8.5-all.zip (DEĞİŞTİRİLMİŞİ)
 `
 distributionBase=GRADLE_USER_HOME
 distributionPath=wrapper/dists
@@ -284,24 +286,25 @@ $ npx react-native doctor
 ---
 
 # ###########################################################################
-## 20-) Eğer Hata Olursa Başlamazsa
+## 20-) Eğer Hata Olursa, Başlamazsa
 ```bash
-Eğer Başlamazsa şunları yapabilirsin
+NOT: Eğer Başlamazsa şunları yapabilirsin
 
-1.adım:  Android Studio Code Pixel 4 35 sil tekrar kur
-2.adım:  npm install
-3.adım:  npm update
-4.adım:  npx react-native doctor
-5.adım:  JDK path veya doğru yüklenmiş mi ?
-6.adım:  npm cache clean --force
-7.adım:  npm start --reset-cache
-8.adım:  npx react-native start --reset-cache
-9.adım:  npx react-native start 
+1.adım :  `Android Studio Code Pixel 4 30` sil ve `Android Studio Code Pixel 4 35` tekrar kur
+2.adım :  npm install
+3.adım :  npm update
+4.adım :  npx react-native doctor
+5.adım :  JDK, path veya doğru yüklenmiş mi ?
+6.adım :  npm cache clean --force
+7.adım :  npm start --reset-cache
+8.adım :  npx react-native start --reset-cache
+9.adım :  npx react-native start 
 10.adım:  npx react-native start --port 9999
-11.adım:  npx react-native run-android
+11.adım:  npx react-native run-android (Eğer `info Dev server ready` android üzerinden çalıştırmayı deneyin.) 
 12.adım:  info Dev server ready ==>  npx react-native run-android
 
 13.adım: port değiştirmek
+package.json => 
  "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
@@ -315,7 +318,7 @@ Eğer Başlamazsa şunları yapabilirsin
 # ###########################################################################
 ## 21-) Eğer Android Doğru Başlamazsa
 ```bash
-cd D:\1_Kodlar\React Native\Workshop1ReactNative4444\android
+cd D:\1_Kodlar\React Native\WorkshopReactNative\android
 ./gradlew --stop
 ./gradlew clean
 ./gradlew --status
@@ -398,7 +401,7 @@ rnfs => React Native Function Component styles
 
 
 # ###########################################################################
-## 24-) Proje İçin 
+## 24-) Proje İçin (Icon Eklemek)
 ```bash
 $ ICON EKLEMEK
 npm install react-native-vector-icons --save
@@ -436,7 +439,7 @@ Xcode açalım ve Info.plist dosyasına şu satırları ekleyin
 ---
 
 # ###########################################################################
-## 25-) Proje İçin 
+## 25-) Proje İçin  (Blur Eklemek)
 ```bash
 -- BLUR => Hem Android hemde IOS tarafından  çalışır
 
@@ -470,7 +473,7 @@ npm install @react-native-community/blur
 ---
 
 # ###########################################################################
-## 26-) Proje İçin 
+## 26-) Proje İçin  (Redux Eklemek) 
 ```bash
 $ REDUX 
 npm install redux react-redux
