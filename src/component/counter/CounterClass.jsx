@@ -28,6 +28,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 // COUNTER CLASS
 class CounterClass extends Component {
+
   // constructor(Kurucu Method: Default ayarlar)
   constructor(props) {
     super(props);
@@ -42,6 +43,11 @@ class CounterClass extends Component {
     this.deCreaseCounter = this.deCreaseCounter.bind(this);
     this.resetCounter = this.resetCounter.bind(this);
   } //end constructor
+
+  // CDM
+  componentDidMount() {
+    
+  }
 
   /////////////////////////////////////////////////////////////////////////
   // FUNCTION
