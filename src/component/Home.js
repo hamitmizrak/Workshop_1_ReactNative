@@ -114,7 +114,7 @@ const HomeScreen = ({navigation, route}) => {
 
           {/* Blur Effect */}
           <BlurView style={styles.blurViewStyle} blurType="light" blurAmount={10}>
-            <Text style={styles.blurViewTextStyle}>Counter Class Component</Text>
+            <Text style={styles.blurViewTextStyle}>Counter Class</Text>
           </BlurView>
         </View>{/* end Counter Class Component-1 */}
         
@@ -127,11 +127,11 @@ const HomeScreen = ({navigation, route}) => {
               style={styles.viewImageStyle}
             />
           </TouchableOpacity>
-          <Text style={styles.blurViewTextStyle}>Counter Function Component</Text>
+          <Text style={styles.blurViewTextStyle}>Counter Function</Text>
 
           {/* Blur Effect */}
           <BlurView style={styles.blurViewStyle} blurType="light" blurAmount={10}>
-            <Text style={styles.blurViewTextStyle}>Counter Function Component</Text>
+            <Text style={styles.blurViewTextStyle}>Counter Function</Text>
           </BlurView>
         </View> 
       </ScrollView> 
